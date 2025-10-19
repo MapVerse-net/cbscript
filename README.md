@@ -1,24 +1,33 @@
 # Introduction
 
-CBScript is a transpiled language, designed by SethBling. This compiler will compile CBScript files into Minecraft datapack zip files. It has many higher level language features that don't exist at the Minecraft command level. Awareness of implementation details will help you avoid performance overhead and bugs. The files in the datapack are generally organized by source file line numbers to make it easier to find the particular compiled mcfunction files you're looking for.
+NetherScript is a hard fork of CBScript by SethBling.
+
+This compiler will compile NetherScript files into Minecraft datapack zip files. It has many higher level language features that don't exist at the Minecraft command level. Awareness of implementation details will help you avoid performance overhead and bugs. The files in the datapack are generally organized by source file line numbers to make it easier to find the particular compiled mcfunction files you're looking for.
 
 # Installation and Requirements
 
-The CBScript compiler requires python 3. In order to run it via the run.cmd file, you'll need the Python "py launcher", which comes with newer installations of Python, and can be used to launch a specific version. You'll need to install the Python dependencies with
+The NetherScript compiler requires Python 3. Install the required libraries by running:
 
 ```pip install -r requirements.txt```
 
-There are instructions in run.cmd for setting up your Windows registry to be able to double click .cbscript files in order to run the compiler.
+There are instructions in run.cmd for setting up your Windows registry to be able to double click .ntscript files in order to run the compiler.
 
 You can use cbscript-npp-highlighting.xml with Notepad++ to add syntax highlighting.
+You can also use the CBScript Visual Studio Code extension.
 
 # Running the Compiler
 
-When you use run.cmd with your .cbscript file as an argument, a command window will pop up. You can also invoke compile.py directly. This command window will monitor your .cbscript file for changes, and recompile any time it observes the file has been changed. Each cbscript file has a world file at the beginning that specifies where to place the compiled datapack. The compiled datapack will be placed in that world's /datapacks folder, with the same base name as the .cbscript file, overwriting it as necessary. You can use /reload in game to reload the datapack when it's been recompiled.
+Usage (for linux):
+```python3 compile.py (file)```
+
+Usage (for windows):
+```py compile.py (file)```
+
+This program will monitor your .ntscript file for changes, and recompile any time it observes the file has been changed. Each ntscript file has a world file at the beginning that specifies where to place the compiled datapack. The compiled datapack will be placed in that world's /datapacks folder, with the same base name as the .ntscript file, overwriting it as necessary. You can use /reload in game to reload the datapack when it's been recompiled.
 
 # Features
 
-CBScript includes many high level features that simplify the syntax and construction of datapacks, as well as make them easier to maintain. Look at the scripts in the "/scripts" folder for examples. There are also archived script subfolders that contain datapacks for older versions of the game.
+NetherScript includes many high level features that simplify the syntax and construction of datapacks, as well as make them easier to maintain. Look at the scripts in the "examples" folder for examples. There are also archived script subfolders that contain datapacks for older versions of the game.
 
 * Include files
 * Arithmetic expressions
@@ -37,3 +46,7 @@ CBScript includes many high level features that simplify the syntax and construc
 * Compile-time macros
 * Template functions
 * Coordinate vectors
+
+# Task List
+
+* A proper documentation
