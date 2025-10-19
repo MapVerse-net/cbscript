@@ -1,6 +1,6 @@
 # Introduction
 
-NetherScript is a hard fork of CBScript by SethBling, mantained by the community from MapVerse.net.
+NetherScript is a hard fork of CBScript by SethBling, mantained by the community from MapVerse.net. It is focused on making Minecraft maps instead of just datapacks.
 
 This compiler will compile NetherScript files into Minecraft datapack zip files. It has many higher level language features that don't exist at the Minecraft command level. Awareness of implementation details will help you avoid performance overhead and bugs. The files in the datapack are generally organized by source file line numbers to make it easier to find the particular compiled mcfunction files you're looking for.
 
@@ -50,3 +50,6 @@ NetherScript includes many high level features that simplify the syntax and cons
 # Task List
 
 * A proper documentation
+* Wrappers for the most used Minecraft commands
+* MiniMessage support
+* A mannequin API
