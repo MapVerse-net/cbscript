@@ -435,7 +435,7 @@ def p_python_import_statement(p):
 	'''python_import_statement : import ID DOT ID'''
 	if p[4] == 'py':
 		p[0] = python_import_block(p.lineno(1), p[2])
-	elif p[4] == 'cblib':
+	elif p[4] == 'cblib' or p[4] == 'ntlib':
 		p[0] = import_block(p.lineno(1), p[2])
 	else:
 		raise SyntaxError(f'Unknown import file type: "{p[2]}.{p[4]}"')

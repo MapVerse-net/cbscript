@@ -9,7 +9,7 @@ class import_block(block_base):
 		
 	def compile(self, func):
 		try:
-			func.import_file(self.filename + '.cblib')
+			func.import_file(self.filename)
 		except SyntaxError as e:
 			print(e)
 			raise CompileError(f'Importing file "{self.filename}" failed at line {self.line}:\n{e}')

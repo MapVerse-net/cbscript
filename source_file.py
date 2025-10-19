@@ -4,6 +4,9 @@ import time
 class source_file(object):
 	def __init__(self, filename):
 
+		if (not "." in filename):
+			filename += ".ntlib"
+
 		if (not os.path.isfile(filename)):
 			internal_dir = os.path.join(os.path.dirname(__file__), 'internal_libs')
 			internal_file = os.path.join(internal_dir, filename)
