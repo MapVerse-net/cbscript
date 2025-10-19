@@ -24,7 +24,7 @@ class mcworld(object):
 		return logfile
 	
 	def write_functions(self, functions):
-		function_dir = f'data/{self.namespace}/functions/'
+		function_dir = f'data/{self.namespace}/function/'
 		
 		for name in functions:
 			filename = os.path.join(function_dir, f"{name}.mcfunction")
@@ -34,7 +34,7 @@ class mcworld(object):
 			self.zip.writestr(filename, text)
 				
 	def write_tags(self, clocks, block_tags, entity_tags, item_tags):
-		tag_dir = 'data/minecraft/tags/functions/'
+		tag_dir = 'data/minecraft/tags/function/'
 		
 		tick_tag_file = os.path.join(tag_dir, 'tick.json')
 		self.zip.writestr(tick_tag_file, json.dumps({'values':[f'{self.namespace}:{name}'for name in clocks]}, indent=4))
@@ -110,9 +110,9 @@ class mcworld(object):
 
 	def write_mcmeta(self, desc):
 		mcmeta_file = 'pack.mcmeta'
-		
-		self.zip.writestr(mcmeta_file, json.dumps({'pack':{'pack_format':1, 'description':desc}}, indent=4))
-	
+
+		self.zip.writestr(mcmeta_file, json.dumps({'pack':{'pack_format':61, 'description':desc}}, indent=4))
+
 	def write_zip(self):
 		self.zip.close()
 	
